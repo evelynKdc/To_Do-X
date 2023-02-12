@@ -1,13 +1,176 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:wght@100&display=swap');
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  
+  color: white;
+  box-sizing: border-box;
+  outline: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+
+.App{
+  
+  background-color: #282c34;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  
+}
+
+
+.title_app{
+  grid-column: 1/2;
+  padding: 1rem;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+}
+.form_container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.formTask{
+  padding:1rem .2rem;
+  background-color: rgb(63, 63, 63, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(138, 138, 138, 0.17);
+  height: 50%;
+  width: 80%;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.area_form{
+  background-color: rgba(71, 71, 71, 0.8);
+  font-size: 14px;
+  font-weight: 200;
+  resize: none;
+  width: 80%;
+  height: 50%;
+  border: none;
+  border-radius: 12px;
+  padding: .5rem 1rem;
+}
+
+.input_form{
+  background-color: rgba(71, 71, 71, 0.8);
+  font-weight: 200;
+  color: white;
+  border-radius: 12px;
+  padding: .5rem 1rem;
+  width: 80%;
+  border: none;
+}
+.input_form:focus, .area_form:focus{
+  border: 1px solid rgb(248, 247, 247, .1); 
+  
+}
+
+/*                                         *BOTONES COOL                       */
+
+.button_primary{
+  background: rgb(64,120,175);
+background: linear-gradient(90deg, rgba(64,120,175,1) 0%, rgba(162,0,255,1) 100%);
+  
+  border: none;
+  border-radius: 18px;
+  width: 80%;
+  height: 12%;
+}
+
+.button_primary:hover{
+  transition: all 2s;         /* TODO: ARREGLAR TRANSICION*/
+  cursor: pointer;
+  background: rgb(55,108,161);
+background: linear-gradient(90deg, rgba(55,108,161,1) 0%, rgba(145,2,227,1) 100%);
+
+}
+
+.danger_button{
+  background-color: rgb(252, 92, 92);
+  border: none;
+  border-radius: 25px;
+  padding: 4px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* *lado drecho con contenedor de tareas creadas */
+
+.itemContainer{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.taskItemContainer{
+  background-color: rgb(63, 63, 63);
+  border-radius: 18px;
+  padding: .5rem 1rem;
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  align-items: center;
+  
+  
+}
+
+.taskItem{
+  
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  width: 80%;
+  
+}
+.taskItem label{
+  
+    background: linear-gradient(90deg, rgb(134, 189, 245) 0%, rgb(186, 68, 255) 100%);
+    -webkit-background-clip: text;
+    color: transparent;  
+  
+
+  font-size: 17px;
+  font-weight: 500;
+}
+
+
+.description_container{
+  display: flex;
+  gap: .5rem;
+  font-size: 14px;
+  font-weight: 200;
+
+}
+
+
+.info_description{
+ 
+  height: auto;
+  width: 90%;
+}
+
+.taskChecked {
+  position: relative;
+
+}
+.taskChecked::after{
+  content: "  (completed)";
 }

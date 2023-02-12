@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { useState } from 'react';
+import './index.css';
+import {FormTask} from './components/adding/FormTask';
+import {ItemContainer} from './components/Listed/ItemContainer';
 
 function App() {
+  const [list, setList] = useState([]);
+  
+  const addItem = (item) =>{
+    setList([...list, item]);
+  }
+  
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className='title_app'>To Do X</h1>
+      <FormTask addItem={addItem}/>
+      <ItemContainer list={list} setList={setList}/>
     </div>
   );
 }
