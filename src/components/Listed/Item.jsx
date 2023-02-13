@@ -1,6 +1,7 @@
 import React from "react";
 
 export function Item({ data, clickDelete }) {
+
   const handlerClick = (e) => {
     clickDelete(data.id);
     console.log(data.title);
@@ -8,17 +9,24 @@ export function Item({ data, clickDelete }) {
 
 
   const handlerCheck =(e) =>{
-    data.done =true; 
-    console.log(data); 
+
+    let checking=data.done ? false : true;
+    data.done=checking;
+    
   }
+
+
+
+
+
 
   const ShowDescription = () => {
     return (
       <>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
+          width="14"
+          height="14"
           fill="currentColor"
           className="bi bi-arrow-return-right"
           viewBox="0 0 16 16"
@@ -33,10 +41,31 @@ export function Item({ data, clickDelete }) {
     );
   };
 
+const CheckBox  = ()=>{
+  return(
+    <div className="container">
+      <input type="checkbox" id={data.id} className="checkGreen" style={{display: "none"}} onChange={handlerCheck}/>
+      <label for={data.id} className="check">
+        <svg width="15px" height="15px" viewBox="0 0 18 18">
+            <path d="M 1 9 L 1 9 c 0 -5 3 -8 8 -8 L 9 1 C 14 1 17 5 17 9 L 17 9 c 0 4 -4 8 -8 8 L 9 17 C 5 17 1 14 1 9 L 1 9 Z"></path>
+            <polyline points="1 9 7 14 15 4"></polyline>
+        </svg>
+      </label>
+    </div>
+  )
+}
+
+
+
+
+
   return (
     <div key={data.id} className="taskItemContainer">
-      <div className="taskItem" onClick={handlerCheck}>
-        <label className={data.done ? "taskChecked" : ""}>{data.title}</label>   
+      <div className="taskItem">
+        <div className="item_top">
+          <CheckBox/>
+          <label for={data.id}>{data.title}</label> 
+        </div>  
         <div className="description_container">
           {data.description ? <ShowDescription /> : null}
         </div>

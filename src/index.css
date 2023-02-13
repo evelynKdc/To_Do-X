@@ -93,7 +93,7 @@ background: linear-gradient(90deg, rgba(64,120,175,1) 0%, rgba(162,0,255,1) 100%
 .button_primary:hover{
   transition: all 2s;         /* TODO: ARREGLAR TRANSICION*/
   cursor: pointer;
-  background: rgb(55,108,161);
+
 background: linear-gradient(90deg, rgba(55,108,161,1) 0%, rgba(145,2,227,1) 100%);
 
 }
@@ -104,10 +104,21 @@ background: linear-gradient(90deg, rgba(55,108,161,1) 0%, rgba(145,2,227,1) 100%
   border-radius: 25px;
   padding: 4px;
   height: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
 }
+.danger_button:hover{
+  background-color: rgb(224, 74, 74);
+  box-shadow: rgba(218, 21, 21, 0.295) 0px 1px 10px 0px;
+}
+
+.button_trash{
+  padding: 8px;
+}
+
+
+
 
 /* *lado drecho con contenedor de tareas creadas */
 
@@ -142,10 +153,10 @@ background: linear-gradient(90deg, rgba(55,108,161,1) 0%, rgba(145,2,227,1) 100%
 }
 .taskItem label{
   
-    background: linear-gradient(90deg, rgb(134, 189, 245) 0%, rgb(186, 68, 255) 100%);
-    -webkit-background-clip: text;
-    color: transparent;  
-  
+  background: linear-gradient(90deg, rgb(134, 189, 245) 0%, rgb(186, 68, 255) 100%);
+  -webkit-background-clip: text;
+  color: transparent;  
+  cursor: pointer;
 
   font-size: 17px;
   font-weight: 500;
@@ -167,10 +178,81 @@ background: linear-gradient(90deg, rgba(55,108,161,1) 0%, rgba(145,2,227,1) 100%
   width: 90%;
 }
 
-.taskChecked {
-  position: relative;
 
+.item_top{
+  display: flex;
+  gap: .8rem;
+  align-items: flex-start;
 }
-.taskChecked::after{
-  content: "  (completed)";
+
+
+
+.check {
+  cursor: pointer;
+  position: relative;
+  margin: auto;
+  width: 18px;
+  height: 18px;
+  -webkit-tap-highlight-color: transparent;
+  transform: translate3d(0, 0, 0);
 }
+
+.check:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(34, 50, 84, 0.03);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.check svg {
+  position: relative;
+  z-index: 1;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #c8ccd4;
+  stroke-width: 1.5;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease;
+}
+
+.check svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+
+.check svg polyline {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+
+.check:hover:before {
+  opacity: 1;
+}
+
+.check:hover svg {
+  stroke: var(--accent-color, #a3e583);
+}
+
+.checkGreen:checked + .check svg {
+  stroke: var(--accent-color, #a3e583);
+}
+
+.checkGreen:checked + .check svg path {
+  stroke-dashoffset: 60;
+  transition: all 0.3s linear;
+}
+
+.checkGreen:checked + .check svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+
