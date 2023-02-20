@@ -10,10 +10,41 @@
   outline: none;
 }
 
+:root{
+  --bg-color-dark: #282c34;
+  --bg-black-input: rgba(71, 71, 71, 0.8);
+  --white: rgb(252, 252, 252);
+  --red: rgb(255, 98, 98);
+  --red-hover: rgb(252, 76, 76); 
+  --purple: rgb(196, 100, 252);
+  --purple-hover: rgb(173, 33, 253);
+  --green: #6cd47e;
+  --green-hover:#47b159; 
+
+  --input-focused: rgba(248, 247, 247, 0.1);
+
+
+  --bg-gradient-text: linear-gradient(
+    90deg,
+    rgb(134, 189, 245) 0%,
+    rgb(186, 68, 255) 100%
+  );
+  --bg-gradient-primary: linear-gradient(
+    90deg,
+    rgba(64, 120, 175, 1) 0%,
+    rgba(162, 0, 255, 1) 100%
+  );
+
+  --bg-gradient-primary-hover:linear-gradient(
+    90deg,
+    rgba(55, 108, 161, 1) 0%,
+    rgba(145, 2, 227, 1) 100%
+  );
+}
 
 /* -----GENERAL LAYOUT ------*/
 .App {
-  background-color: #282c34;
+  background-color: var(--bg-color-dark);
   width: 100%;
   height: 100vh;
   display: grid;
@@ -57,31 +88,21 @@
 }
 
 .button_primary {
-  background: rgb(64, 120, 175);
-  background: linear-gradient(
-    90deg,
-    rgba(64, 120, 175, 1) 0%,
-    rgba(162, 0, 255, 1) 100%
-  );
+  background: var(--bg-gradient-primary);
   width: 80%;
   height: 12%;
 }
 
 .button_primary:hover {
-
-  background: linear-gradient(
-    90deg,
-    rgba(55, 108, 161, 1) 0%,
-    rgba(145, 2, 227, 1) 100%
-  );
+  background: var(--bg-gradient-primary-hover);
 }
 
 .danger_button {
-  background-color: rgb(255, 98, 98);
+  background-color: var(--red);
   padding: 4px;
 }
 .danger_button:hover {
-  background-color: rgb(252, 76, 76);
+  background-color: var(--red-hover);
   box-shadow: rgba(255, 152, 152, 0.315) 0px 1px 10px 0px;
 }
 
@@ -90,22 +111,22 @@
 }
 
 .edit_buttom{
-  background-color: rgb(196, 100, 252);
+  background-color: var(--purple);
   padding: 6px;
 }
 .edit_buttom:hover {
-  background-color: rgba(162, 0, 255, 1);
+  background-color: var(--purple-hover);
   box-shadow: rgba(239, 156, 255, 0.295) 0px 1px 10px 0px;
 }
 
 
 .button_confirm{
   padding: 4px;
-  background-color: #6cd47e;
+  background-color: var(--green);
 }
 
 .button_confirm:hover {
-  background-color: #47b159;
+  background-color: var(--green-hover);
   box-shadow: rgba(121, 255, 155, 0.295) 0px 1px 10px 0px;
 }
 
@@ -115,16 +136,16 @@
 /*---GENERAL FORM STYLE---*/
 
 .txtInput{
-  background-color: rgba(71, 71, 71, 0.8);
+  background-color: var(--bg-black-input);
   font-weight: 200;
-  color: white;
+  color: var(--white);
   border-radius: 12px;
   padding: 0.5rem 1rem;
   border: none;
 }
 
 .txtArea{
-  background-color: rgba(71, 71, 71, 0.8);
+  background-color: var(--bg-black-input);
   font-size: 14px;
   font-weight: 200;
   resize: none;
@@ -134,8 +155,9 @@
 }
 .txtInput:focus,
 .txtArea:focus {
-  border: 1px solid rgb(248, 247, 247, 0.1);
+  border: 1px solid var(--input-focused) ;
 }
+
 
 /*----FORM TASK COMPONENT----*/
 .formTask {
@@ -181,11 +203,7 @@
   width: 80%;
 }
 .taskItem label {
-  background: linear-gradient(
-    90deg,
-    rgb(134, 189, 245) 0%,
-    rgb(186, 68, 255) 100%
-  );
+  background: var(--bg-gradient-text);
   -webkit-background-clip: text;
   color: transparent;
   cursor: pointer;
