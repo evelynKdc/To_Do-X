@@ -1,46 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:wght@100&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:wght@100&display=swap");
+
+
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
-  
+  font-family: "Poppins", sans-serif;
   color: white;
   box-sizing: border-box;
   outline: none;
 }
 
 
-
-.App{
-  
+/* -----GENERAL LAYOUT ------*/
+.App {
   background-color: #282c34;
   width: 100%;
   height: 100vh;
   display: grid;
   grid-template-columns: 30% 70%;
-  
 }
 
-
-.title_app{
+.title_app {
   grid-column: 1/2;
   padding: 1rem;
   width: 100%;
   position: absolute;
   text-align: center;
 }
-.form_container{
+.form_container {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
-.formTask{
-  padding:1rem .2rem;
+.itemContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+/* ------------------------------------BOTONES COOL---------------------*/
+
+.buttons {  
+  display: grid;
+  place-content: center;
+  cursor: pointer;          
+  border: none;
+  border-radius: 25px;
+
+}
+
+.button_primary {
+  background: rgb(64, 120, 175);
+  background: linear-gradient(
+    90deg,
+    rgba(64, 120, 175, 1) 0%,
+    rgba(162, 0, 255, 1) 100%
+  );
+  width: 80%;
+  height: 12%;
+}
+
+.button_primary:hover {
+
+  background: linear-gradient(
+    90deg,
+    rgba(55, 108, 161, 1) 0%,
+    rgba(145, 2, 227, 1) 100%
+  );
+}
+
+.danger_button {
+  background-color: rgb(255, 98, 98);
+  padding: 4px;
+}
+.danger_button:hover {
+  background-color: rgb(252, 76, 76);
+  box-shadow: rgba(255, 152, 152, 0.315) 0px 1px 10px 0px;
+}
+
+.button_trash {
+  padding: 8px;
+}
+
+.edit_buttom{
+  background-color: rgb(196, 100, 252);
+  padding: 6px;
+}
+.edit_buttom:hover {
+  background-color: rgba(162, 0, 255, 1);
+  box-shadow: rgba(239, 156, 255, 0.295) 0px 1px 10px 0px;
+}
+
+
+.button_confirm{
+  padding: 4px;
+  background-color: #6cd47e;
+}
+
+.button_confirm:hover {
+  background-color: #47b159;
+  box-shadow: rgba(121, 255, 155, 0.295) 0px 1px 10px 0px;
+}
+
+
+
+
+/*---GENERAL FORM STYLE---*/
+
+.txtInput{
+  background-color: rgba(71, 71, 71, 0.8);
+  font-weight: 200;
+  color: white;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+.txtArea{
+  background-color: rgba(71, 71, 71, 0.8);
+  font-size: 14px;
+  font-weight: 200;
+  resize: none;
+  border: none;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+}
+.txtInput:focus,
+.txtArea:focus {
+  border: 1px solid rgb(248, 247, 247, 0.1);
+}
+
+/*----FORM TASK COMPONENT----*/
+.formTask {
+  padding: 1rem 0.2rem;
   background-color: rgb(63, 63, 63, 0.5);
   box-shadow: 0 8px 32px 0 rgba(138, 138, 138, 0.17);
   height: 50%;
@@ -52,140 +151,66 @@
   justify-content: space-between;
   gap: 1rem;
 }
-.area_form{
-  background-color: rgba(71, 71, 71, 0.8);
-  font-size: 14px;
-  font-weight: 200;
-  resize: none;
+.area_form {
   width: 80%;
   height: 50%;
-  border: none;
-  border-radius: 12px;
-  padding: .5rem 1rem;
 }
 
-.input_form{
-  background-color: rgba(71, 71, 71, 0.8);
-  font-weight: 200;
-  color: white;
-  border-radius: 12px;
-  padding: .5rem 1rem;
+.input_form {
   width: 80%;
-  border: none;
-}
-.input_form:focus, .area_form:focus{
-  border: 1px solid rgb(248, 247, 247, .1); 
-  
-}
-
-/*                                         *BOTONES COOL                       */
-
-.button_primary{
-  background: rgb(64,120,175);
-background: linear-gradient(90deg, rgba(64,120,175,1) 0%, rgba(162,0,255,1) 100%);
-  
-  border: none;
-  border-radius: 18px;
-  width: 80%;
-  height: 12%;
-}
-
-.button_primary:hover{
-  transition: all 2s;         /* TODO: ARREGLAR TRANSICION*/
-  cursor: pointer;
-
-background: linear-gradient(90deg, rgba(55,108,161,1) 0%, rgba(145,2,227,1) 100%);
-
-}
-
-.danger_button{
-  background-color: rgb(252, 92, 92);
-  border: none;
-  border-radius: 25px;
-  padding: 4px;
-  height: fit-content;
-  display: grid;
-  place-content: center;
-  cursor: pointer;
-}
-.danger_button:hover{
-  background-color: rgb(224, 74, 74);
-  box-shadow: rgba(218, 21, 21, 0.295) 0px 1px 10px 0px;
-}
-
-.button_trash{
-  padding: 8px;
 }
 
 
+/* -----------lado drecho con contenedor de tareas creadas -----------------*/
 
 
-/* *lado drecho con contenedor de tareas creadas */
-
-.itemContainer{
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.taskItemContainer{
+.taskItemContainer {
   background-color: rgb(63, 63, 63);
   border-radius: 18px;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   display: flex;
   width: 60%;
   justify-content: space-between;
   align-items: center;
-  
-  
 }
 
-.taskItem{
-  
+.taskItem {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
   width: 80%;
-  
 }
-.taskItem label{
-  
-  background: linear-gradient(90deg, rgb(134, 189, 245) 0%, rgb(186, 68, 255) 100%);
+.taskItem label {
+  background: linear-gradient(
+    90deg,
+    rgb(134, 189, 245) 0%,
+    rgb(186, 68, 255) 100%
+  );
   -webkit-background-clip: text;
-  color: transparent;  
+  color: transparent;
   cursor: pointer;
 
   font-size: 17px;
   font-weight: 500;
 }
 
-
-.description_container{
+.description_container {
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
   font-size: 14px;
   font-weight: 200;
-
 }
 
-
-.info_description{
- 
+.info_description {
   height: auto;
   width: 90%;
 }
 
-
-.item_top{
+.item_top {
   display: flex;
-  gap: .8rem;
+  gap: 0.8rem;
   align-items: flex-start;
 }
-
-
 
 .check {
   cursor: pointer;
@@ -255,4 +280,26 @@ background: linear-gradient(90deg, rgba(55,108,161,1) 0%, rgba(145,2,227,1) 100%
   transition-delay: 0.15s;
 }
 
+
+
+/* --------------------------------UPDATING FORM -----------------------------*/
+.formTaskUpdating{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.containerInputsUpdating{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  width: 80%;
+}
+
+.containerButtonsUpdating{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 

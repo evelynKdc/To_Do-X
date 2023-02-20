@@ -7,11 +7,10 @@ export function FormTask(props) {
   const  {addItem}  = props;
 
 
-  const handlerSubit = (e) => {
+  const handlerSubmit = (e) => {
     e.preventDefault();
     console.log(title);
     console.log(description);
-
 
     // *antes que resetee le mando el objeto
     addItem({
@@ -38,25 +37,25 @@ export function FormTask(props) {
 
   return (
     <div className="form_container">
-      <form className="formTask" onSubmit={handlerSubit}>
+      <form className="formTask" onSubmit={handlerSubmit}>
         <input
           autoFocus
-          className="input_form"
+          className="txtInput input_form"
           type="text"
           placeholder="Titulo...."
           onChange={handlerInputTitle}
           value={title}
         />
         <textarea
-          className="area_form"
+          className="txtArea area_form"
           placeholder="Descripción (opcional) . . . ."
           onChange={handlerAreaDescription}
           value={description}
         ></textarea>
         <button
-          className="button_primary"
+          className="buttons button_primary"
           type="submit"
-          disabled={title ? false : true}
+          disabled={title.trim() ? false : true}
         >
           Agregar
         </button>
