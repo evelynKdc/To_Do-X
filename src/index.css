@@ -19,7 +19,7 @@
   --purple: rgb(196, 100, 252);
   --purple-hover: rgb(173, 33, 253);
   --green: #6cd47e;
-  --green-hover:#47b159; 
+  --green-hover: rgb(88, 196, 106);
 
   --input-focused: rgba(248, 247, 247, 0.1);
 
@@ -40,6 +40,24 @@
     rgba(55, 108, 161, 1) 0%,
     rgba(145, 2, 227, 1) 100%
   );
+
+
+  --gap-sm: 0.5rem;
+  --gap-md: 0.8rem;
+  --gap-l: 1rem;
+
+  --text-regular: 13px; 
+  --text-medium:16px; 
+  --texte-large: 21px;
+  --text-extraLarge: 32px; 
+
+  --text-weight-regular: 200;
+  --text-weight-bold: 500;
+
+  --border-sm: 12px;
+  --border-md:18px;
+  --border-large: 25px;
+  /*TODO: lo mismo con paddings */
 }
 
 /* -----GENERAL LAYOUT ------*/
@@ -57,6 +75,7 @@
   width: 100%;
   position: absolute;
   text-align: center;
+  font-size: var(--text-extraLarge);
 }
 .form_container {
   width: 100%;
@@ -72,7 +91,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: var(--gap-l);
 }
 
 
@@ -83,7 +102,7 @@
   place-content: center;
   cursor: pointer;          
   border: none;
-  border-radius: 25px;
+  border-radius: var(--border-large);
 
 }
 
@@ -137,20 +156,21 @@
 
 .txtInput{
   background-color: var(--bg-black-input);
-  font-weight: 200;
+  font-size: var(--text-regular);
+  font-weight: var(--text-weight-regular);
   color: var(--white);
-  border-radius: 12px;
+  border-radius: var(--border-sm);
   padding: 0.5rem 1rem;
   border: none;
 }
 
 .txtArea{
   background-color: var(--bg-black-input);
-  font-size: 14px;
-  font-weight: 200;
+  font-size: var(--text-regular);
+  font-weight: var(--text-weight-regular);
   resize: none;
   border: none;
-  border-radius: 12px;
+  border-radius: var(--border-sm);
   padding: 0.5rem 1rem;
 }
 .txtInput:focus,
@@ -166,12 +186,12 @@
   box-shadow: 0 8px 32px 0 rgba(138, 138, 138, 0.17);
   height: 50%;
   width: 80%;
-  border-radius: 25px;
+  border-radius: var(--border-large);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+
 }
 .area_form {
   width: 80%;
@@ -188,7 +208,7 @@
 
 .taskItemContainer {
   background-color: rgb(63, 63, 63);
-  border-radius: 18px;
+  border-radius: var(--border-md);
   padding: 0.5rem 1rem;
   display: flex;
   width: 60%;
@@ -199,7 +219,7 @@
 .taskItem {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--gap-sm);
   width: 80%;
 }
 .taskItem label {
@@ -208,25 +228,29 @@
   color: transparent;
   cursor: pointer;
 
-  font-size: 17px;
-  font-weight: 500;
+  font-size: var(--text-medium);
+  font-weight: var(--text-weight-bold);
 }
 
 .description_container {
   display: flex;
-  gap: 0.5rem;
-  font-size: 14px;
-  font-weight: 200;
+  gap: var(--gap-sm);
+  font-size: var(--text-regular);
+  font-weight: var(--text-weight-regular);
 }
 
 .info_description {
   height: auto;
   width: 90%;
+  font-size: var(--text-regular);
+}
+.title_label{
+  font-size: var(--text-medium);
 }
 
 .item_top {
   display: flex;
-  gap: 0.8rem;
+  gap: var(--gap-md);
   align-items: flex-start;
 }
 
@@ -310,7 +334,7 @@
 .containerInputsUpdating{
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: var(--gap-sm);
   width: 80%;
 }
 

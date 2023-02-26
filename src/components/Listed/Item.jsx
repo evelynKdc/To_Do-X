@@ -140,7 +140,7 @@ export function Item({ data, clickDelete }) {
         <div className="taskItem">
           <div className="item_top">
             <CheckBox />
-            <label htmlFor={data.id}>{data.title}</label>
+            <label htmlFor={data.id} className="title_label">{data.title}</label>
           </div>
           <div className="description_container">
             {data.description.trim() ? <ShowDescription /> : null}
