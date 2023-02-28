@@ -129,6 +129,7 @@
   padding: 8px;
 }
 
+
 .edit_buttom{
   background-color: var(--purple);
   padding: 6px;
@@ -151,8 +152,23 @@
 
 
 
+.add_button {
+  display: none;
+  background-color: var(--red);
+  padding: 8px;
+}
+.add_button:hover {
+  background-color: var(--red-hover);
+  box-shadow: rgba(255, 152, 152, 0.315) 0px 1px 10px 0px;
+}
 
-/*---GENERAL FORM STYLE---*/
+.close_button{
+  display: none;
+}
+
+
+
+/*-------------------------GENERAL FORM STYLE--------------------*/
 
 .txtInput{
   background-color: var(--bg-black-input);
@@ -180,6 +196,8 @@
 
 
 /*----FORM TASK COMPONENT----*/
+
+
 .formTask {
   padding: 1rem 0.2rem;
   background-color: rgb(63, 63, 63, 0.5);
@@ -344,4 +362,65 @@
   justify-content: space-around;
   align-items: center;
 }
+
+
+
+/* --------------------------------media queries -----------------------------*/
+
+@media only screen and (max-width: 600px) {
+  .App{
+   grid-template-columns: 1fr;
+ 
+  }
+ 
+  
+  .form_container{
+    z-index: 100;
+    padding: 3rem 0;
+    height: 90%;
+    background-color: var(--bg-color-dark);
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .asideVisible{
+    left: 0;
+  }
+
+  .asideNotVisible{
+    left: -150%;
+  }
+
+  .formTask{
+
+    justify-content: space-around;
+    height: 70%;
+  }
+
+
+  .close_button{
+    display: grid;
+    padding: 8px;
+    bottom: 5%;
+  }
+
+  .add_button{
+    display: grid;
+    position: absolute;
+    right: 8%;
+    bottom: 8%;
+  }
+ 
+
+  .taskItemContainer{
+    width: 90%;
+  }
+
+  .taskItem{
+    width: 75%;
+  }
+
+ }
+
 
