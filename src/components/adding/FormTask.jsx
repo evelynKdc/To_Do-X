@@ -3,8 +3,7 @@ import { useState } from "react";
 export function FormTask(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const { addItem,closeFormHandler,asideVisible } = props;
-
+  const { addItem, closeFormHandler, asideVisible } = props;
 
   const handlerSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +29,11 @@ export function FormTask(props) {
   };
 
   return (
-    <div className={`form_container ${asideVisible ? "asideVisible" : "asideNotVisible"}`}>
+    <div
+      className={`form_container ${
+        asideVisible ? "asideVisible" : "asideNotVisible"
+      }`}
+    >
       <form className="formTask" onSubmit={handlerSubmit}>
         <input
           autoFocus
@@ -55,7 +58,10 @@ export function FormTask(props) {
         </button>
       </form>
 
-      <button className="buttons danger_button close_button" onClick={closeFormHandler}>
+      <button
+        className="buttons danger_button close_button"
+        onClick={closeFormHandler}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
