@@ -5,9 +5,12 @@ import {FormTask} from './components/adding/FormTask';
 import {ItemContainer} from './components/Listed/ItemContainer';
 
 function App() {
-  const [list, setList] = useState([]);
+  const initialItems = JSON.parse(localStorage.getItem("list"));
+  const [list, setList] = useState(initialItems);
   const [asideVisible, setAsideVisible] = useState(false);
   
+  
+
   const addItem = (item) =>{
     setList([...list, item]);
   }

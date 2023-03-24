@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Item } from "./item/Item";
 import { TrashButton } from "./buttons/TrashButton";
 import { AddButton } from "./buttons/AddButton";
@@ -12,6 +12,12 @@ export function ItemContainer({ list, setList, openFormHandler }) {
   const listed = list.map((item) => (
     <Item key={item.id} data={item} clickDelete={handlerClickDelete} />
   ));
+
+  useEffect(()=>{
+    localStorage.setItem("list", JSON.stringify(list));
+  },[list]);
+
+  
 
   return (
     <div className="itemContainer">
