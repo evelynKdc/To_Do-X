@@ -6,7 +6,7 @@ import {ItemContainer} from './components/Listed/ItemContainer';
 
 function App() {
   const initialItems = JSON.parse(localStorage.getItem("list"));
-  const [list, setList] = useState(initialItems);
+  const [list, setList] = useState(initialItems || []);
   const [asideVisible, setAsideVisible] = useState(false);
   
   

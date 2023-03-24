@@ -164,6 +164,7 @@
 
 .close_button{
   display: none;
+  border-radius: 50%;
 }
 
 
@@ -408,6 +409,7 @@
   .add_button{
     display: grid;
     position: absolute;
+    border-radius: 50%;
     right: 8%;
     bottom: 8%;
   }
