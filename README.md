@@ -44,6 +44,7 @@ You can see a live demo of the React Task List [here](https://to-do-x.netlify.ap
 
 
 </div>
+
 ## Installation 🛠️
 
 To get started with ToDo X, follow these steps:
