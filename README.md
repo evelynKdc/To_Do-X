@@ -98,3 +98,5 @@ This project was developed with ❤️ by <a href="https://github.com/evelynKdc"
 [![Discord](https://img.shields.io/badge/evelyndc-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discordapp.com/users/evelyndc)
 
 </div>
+
+Join us today and experience the perfect blend of productivity and style. Explore ToDo X and transform the way you manage your tasks. Visit our page now and take the first step toward a more organized and efficient life! 📝💗
